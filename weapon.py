@@ -60,7 +60,7 @@ class Weapon:
         self.range = random.randint(RANGES[i][0], RANGES[i][1])
         self.damage = None
         self.accuracy = random.uniform(ACCURACIES[i][0], ACCURACIES[i][1])
-        self.manufacturer = random.choice(MANUFACTURER)
+        self.manufacturer = random.choice(MANUFACTURER[:6])
         self.rarity = None
 
         if r <= 3500:
@@ -84,7 +84,7 @@ class Weapon:
         else: # add rarity modifier if not a 7
             self.damage = self.range + random.randint(self.rarity["mod"][0], self.rarity["mod"][1])
 
-    def get:
+    def get():
         return {"type": self.type, "range": self.range, "damage":self.damage, "rarity":self.rarity, "manufacturer":self.manufacturer }
 
     def __str__(self):
